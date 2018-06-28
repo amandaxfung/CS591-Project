@@ -109,6 +109,9 @@ router.get('/callback', function(req, res) {
                     request.get(options, function (error, response, body) {
                         let artistfromSpotify = body.items[in_count].track.artists[0].name;
                         let  trackfromSpotify = body.items[in_count].track.name;
+                        let jsonBody = JSON.parse(body.items[0].track.artists[0].name)
+                    //let jsonBody=JSON.parse(body)
+                    res.json(jsonBody)
 
                         //console.log(artistfromSpotify)
                          //console.log(trackfromSpotify)
